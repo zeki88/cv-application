@@ -2,8 +2,8 @@ import ExperienceForm from "./ExperienceForm";
 
 export default function Experience( { company, onChange, onAdd, onDelete} ) {
   return (
-    <div>
-      <h1>Education</h1>
+    <div className="formContainer">
+      <h1>Experience</h1>
       {company && company.length > 0 ? (
   company.map((singleCompany) => (
     <ExperienceForm

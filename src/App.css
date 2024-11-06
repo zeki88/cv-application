@@ -14,6 +14,7 @@
 form {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 .fullName {
@@ -25,6 +26,8 @@ form {
   background-color: white;
   width: 21cm;
   height: 29.7cm;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 5rem;
 }
 
 .personalInfo {
@@ -75,6 +78,7 @@ button {
 }
 
 .delete {
+  padding: 0.2rem;
   background: rgb(199, 27, 27);
 }
 
@@ -129,3 +133,30 @@ button {
 .companyInfo .companyDescription {
   grid-column: 2;
 }
+
+input {
+  background-color: #6797c1;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.formContainer {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  width: 20vw;
+}
+
+label {
+  font-weight: bold;
+}
+

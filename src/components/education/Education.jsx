@@ -2,7 +2,7 @@ import EducationForm from "./EducationForm";
 
 export default function Education( { school, onChange, onAdd, onDelete} ) {
   return (
-    <div>
+    <div className="formContainer">
       <h1>Education</h1>
       {school && school.length > 0 ? (
   school.map((singleSchool) => (

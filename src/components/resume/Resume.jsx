@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import HeaderInfo from '../header/HeaderInfo';
 import ExperienceInfo from '../experience/ExperienceInfo';
 import EducationInfo from '../education/EducationInfo';

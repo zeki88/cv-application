@@ -3,7 +3,7 @@ import Input from "../common/Input";
 export default function Header({person, onChange}) {
 
   return (
-    <div>
+    <div className="formContainer">
         <h1>Personal Info</h1>
       <form action="">
       <Input

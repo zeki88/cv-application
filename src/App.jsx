@@ -118,19 +118,19 @@ function generatePDF() {
   return (
     <>
     <div className="App">
-    <div>
+    <div className="container">
     <Button label="Download" onClick={generatePDF} className="download" />
         <Header person={ person } onChange={onChange} />
         <Education school={school} onChange={onSchoolChange} onAdd={addSchool} onDelete={removeSchool} />
         <Button
-          label="Save"
+          label="Add"
           className="save"
           type="button"
           onClick={addSchool}
         />
         <Experience company={company} onChange={onCompanyChange} onAdd={addCompany} onDelete={removeCompany} />
         <Button
-              label="Save"
+              label="Add"
               className="save"
               type="button"
               onClick={addCompany}

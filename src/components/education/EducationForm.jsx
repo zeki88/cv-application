@@ -1,7 +1,7 @@
 import Button from "../common/Button";
 import Input from "../common/Input";
 
-export default function EducationForm({ school, onChange, onAdd, onDelete }) {
+export default function EducationForm({school, onChange, onAdd, onDelete}) {
     return (
         <form action="">
         <Input
