@@ -125,3 +125,7 @@ button {
 .companyInfo .companyLocation {
   grid-row: 2;
 }
+
+.companyInfo .companyDescription {
+  grid-column: 2;
+}
