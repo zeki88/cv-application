@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullName {
+  display: flex;
+  gap: 1rem;
+}
+
+.CV {
+  background-color: white;
+  width: 21cm;
+  height: 29.7cm;
+}
+
+.personalInfo {
+  background: #101831;
+  color: white;
+}
+
+.name {
+  display: flex;
+  gap: 1rem;
+  font-size: 4rem;
+  justify-content: center;
+}
+
+.contact {
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-section {
+    justify-content: center;
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: aliceblue;
+  }
+
+.info {
+  padding: 3rem;
+  padding-top: 2rem;
+}
+
+.infoName {
+  font-weight: bold;
+}
+
+button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: min-content;
+}
+
+.download {
+  background: rgb(199, 27, 27);
+}
+
+.delete {
+  background: rgb(199, 27, 27);
+}
+
+.educationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.schoolInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.schoolInfo .name {
+  grid-column: 2;
+}
+
+.schoolInfo .degree {
+  grid-column: 2;
+}
+
+.schoolInfo .schoolDate {
+  grid-row: 1;
+}
+
+.schoolInfo .schoolLocation {
+  grid-row: 2;
+}
+
+.companyInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.companyInfo .infoName {
+  grid-column: 2;
+}
+
+.companyInfo .position {
+  grid-column: 2;
+}
+
+.companyInfo .companyDate {
+  grid-row: 1;
+}
+
+.companyInfo .companyLocation {
+  grid-row: 2;
+}
