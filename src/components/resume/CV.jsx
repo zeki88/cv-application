@@ -1,6 +1,5 @@
 import HeaderInfo from '../header/HeaderInfo';
-import ExperienceInfo from '../experience/ExperienceInfo';
-import EducationInfo from '../education/EducationInfo';
+import CVInfo from './CVInfo';
 import HeaderSection from '../common/HeaderSection';
 
 export default function CV({ person, school, company }) {
@@ -11,15 +10,15 @@ export default function CV({ person, school, company }) {
       <div className="personalInfo">
       <HeaderInfo person={person} />
       </div>
-    <div className="info">
+    <div className="infoContainer">
     <HeaderSection title="Education" />
       <div className="educationInfo">
-      <EducationInfo school={school} />
+      <CVInfo objects={school} />
       </div>
 
       <HeaderSection title="Experience" />
       <div className="experienceInfo">
-      <ExperienceInfo company={company} />
+      <CVInfo objects={company} />
       </div>
     </div>
 

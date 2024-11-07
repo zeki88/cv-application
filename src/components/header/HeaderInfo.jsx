@@ -2,13 +2,13 @@ export default function HeaderInfo({person}) {
     return (
         <>
         <div className="name">
-            <p>{person.firstName}</p>
-            <p>{person.lastName}</p>
+            <p>{person.FirstName}</p>
+            <p>{person.LastName}</p>
         </div>
         <div className="contact">
-            <p>{person.email}</p>
-            <p>{person.phone}</p>
-            <p>{person.adress}</p>
+            <p>{person.Email}</p>
+            <p>{person.Phone}</p>
+            <p>{person.Adress}</p>
         </div>
         </>
     );

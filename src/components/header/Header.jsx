@@ -1,52 +1,47 @@
 import Input from "../common/Input";
+import Button from "../common/Button";
+import { useState } from "react";
+export default function Header({person, onChange, onEdit}) {
 
-export default function Header({person, onChange}) {
+  const [activeEditId, setActiveEditId] = useState(true)
+
+  const input = Object.keys(person).map((key) => {
+    if (key !== "Show") {
+      return (
+        <Input
+          key={key}
+          label={key}
+          type="text"
+          placeholder={`Enter ${key}`}
+          className={key}
+          name={key}
+          value={person[key]}
+          onChange={onChange}
+        />
+      );
+    }
+    return null;
+  });
+
+  function onClose() {
+    setActiveEditId(null);
+  }
 
   return (
     <div className="formContainer">
-        <h1>Personal Info</h1>
-      <form action="">
-      <Input
-        label="First Name"
-        type="text"
-        placeholder="Enter first name"
-        className="firstName"
-        value={person.firstName}
-        onChange={onChange}
-      />
-        <Input
-        label="Last Name"
-        type="text"
-        placeholder="Enter last name"
-        className="lastName"
-        value={person.lastName}
-        onChange={onChange}
-      />
-      <Input
-        label="Email"
-        type="text"
-        placeholder="Enter email"
-        className="email"
-        value={person.email}
-        onChange={onChange}
-      />
-      <Input
-        label="Phone"
-        type="text"
-        placeholder="Enter phone"
-        className="phone"
-        value={person.phone}
-        onChange={onChange}
-     />
-      <Input
-        label="Adress"
-        type="text"
-        placeholder="Enter adress"
-        className="adress"
-        value={person.adress}
-        onChange={onChange}
-      />
+    <h1>Personal Info</h1>
+    {activeEditId && person.Show ? (
+      <form className={"form person"}>
+        {input}
+        <div className="buttons">
+        <Button label="Close" className="close" type="button" onClick={onClose} />
+        </div>
       </form>
+    ) : (
+      <>
+        <Button label="Edit" className="edit" type="button" onClick={(e) => {onEdit(e); setActiveEditId(true);}} />
+      </>
+    )}
     </div>
   );
 }
