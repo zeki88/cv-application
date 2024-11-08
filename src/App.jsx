@@ -16,13 +16,13 @@ function App() {
     setPerson({ ...person, [e.target.className]: e.target.value });
   };
 
-  function onEdit (e) {
+  function onEdit () {
     setPerson({ ...person, Show: true });
   };
 
   const [school, setSchool] = useState([
-    { id: crypto.randomUUID(), Name: "Universidad Nacional José C. Paz", Degree: "Licenciatura en Informática", StartDate: "01/01/2021", EndDate: "01/01/2024", Location: "Buenos Aires, BA", Show: false },
-    { id: crypto.randomUUID(), Name: "Universidad Nacional General Sarmiento", Degree: "Licenciatura en Informática", StartDate: "01/01/2021", EndDate: "01/01/2024", Location: "Buenos Aires, BA", Show: false }
+    { id: crypto.randomUUID(), School: "Universidad Nacional José C. Paz", Degree: "Licenciatura en Informática", StartDate: "01/01/2021", EndDate: "01/01/2024", Location: "Buenos Aires, BA", Show: false },
+    { id: crypto.randomUUID(), School: "Universidad Nacional General Sarmiento", Degree: "Licenciatura en Informática", StartDate: "01/01/2021", EndDate: "01/01/2024", Location: "Buenos Aires, BA", Show: false }
   ]);
   
   const [company, setCompany] = useState([
@@ -42,7 +42,7 @@ function App() {
   }
 
   function addSchool() {
-    setSchool([...school, { id: crypto.randomUUID(), Name: "", Degree: "", StartDate: "", EndDate: "", Location: "", Show: true }]);
+    setSchool([...school, { id: crypto.randomUUID(), School: "", Degree: "", StartDate: "", EndDate: "", Location: "", Show: true }]);
   }
   
 
@@ -72,15 +72,19 @@ function App() {
   }
 
   function handleOnCloseSchool(id) {
-    setSchool(school.map(singleSchool =>
-      singleSchool.id === id ? { ...singleSchool, Show: false } : singleSchool
-    ));
+      setSchool(school.map(singleSchool =>
+        singleSchool.id === id ? { ...singleSchool, Show: false } : singleSchool
+      ));
   }
 
   function handleOnCloseCompany(id) {
     setCompany(company.map(singleCompany =>
       singleCompany.id === id ? { ...singleCompany, Show: false } : singleCompany
     ));
+  }
+
+  const getLastElement = (array) => {
+    return console.log(array[array.length - 1])
   }
 
 
@@ -126,8 +130,8 @@ function clear() {
     <Button label="Clear" onClick={clear} className="clear" />
     </div>
         <Header person={ person } onChange={onChange} onEdit={onEdit} />
-        <CreateForm object={school} title="Education" onChange={onSchoolChange} onDelete={removeSchool} onClick={addSchool} onEdit={handleEditSchool} onClose={handleOnCloseSchool}/>
-        <CreateForm object={company} title="Experience" onChange={onCompanyChange} onDelete={removeCompany} onClick={addCompany} onEdit={handleEditCompany} onClose={handleOnCloseCompany} />
+        <CreateForm object={school} title="Education" onChange={onSchoolChange} onDelete={removeSchool} onClick={addSchool} onEdit={handleEditSchool} onNoEdit={handleOnCloseSchool}/>
+        <CreateForm object={company} title="Experience" onChange={onCompanyChange} onDelete={removeCompany} onClick={addCompany} onEdit={handleEditCompany}/>
     </div>
     <div id="cv" className="CV">
     <CV person={person} school={school} company={company} />

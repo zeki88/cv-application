@@ -20,6 +20,8 @@ export default function NewForm({ item, isEditing, onEdit, onClose, onChange, on
     return null;
   });
 
+  const label = item.Name ? item.Name : item.School;
+
   return (
     <>
       {isEditing && item.Show ? (
@@ -32,7 +34,7 @@ export default function NewForm({ item, isEditing, onEdit, onClose, onChange, on
         </form>
       ) : (
         <>
-          <Button label={item.Name} className="edit" type="button" onClick={onEdit} />
+          <Button label={label} className="edit" type="button" onClick={onEdit} />
         </>
       )}
     </>

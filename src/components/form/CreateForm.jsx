@@ -2,17 +2,21 @@ import React, { useState, useEffect } from 'react';
 import NewForm from './NewForm';
 import Button from '../common/Button';
 
-export default function CreateForm({ object, title, onChange, onDelete, onClick, onEdit, onClose }) {
+export default function CreateForm({ object, title, onChange, onDelete, onClick, onEdit, onNoEdit }) {
   const [activeEditId, setActiveEditId] = useState(null);
 
-  /*useEffect(() => {
-    if (object.length > 0) {
+    useEffect(() => {
+    if (object.length > 0 && object[object.length - 1].Show) {
       handleEdit(object[object.length - 1].id);
     }
-  }, [object]);*/
+  }, [object]);
 
   function handleEdit(id) {
     setActiveEditId(id);
+  }
+
+  function onClose() {
+    setActiveEditId(null);
   }
 
   return (
@@ -26,7 +30,7 @@ export default function CreateForm({ object, title, onChange, onDelete, onClick,
           onEdit={() => {handleEdit(item.id); onEdit(item.id)}}
           onChange={(e) => onChange(e, item.id)}
           onDelete={() => onDelete(item.id)}
-          onClose={() => {setActiveEditId(null); onClose(item.id)}}
+          onClose={() => {onClose(); onNoEdit(item.id)}}
         />
       ))}
       <Button
