@@ -6,8 +6,9 @@
 
 .App {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   width: 100vw;
+  align-items: center;
 }
 
 /*Form*/
@@ -65,10 +66,12 @@ label {
 
 .CV {
   background-color: white;
-  width: 21cm;
-  height: 29.7cm;
   box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
-  margin-top: 5rem;
+  width: 29.7cm;
+  height: 21cm;
+  transform: scale(0.35);
+  transform-origin: top;
+  margin-top: 1rem;
 }
 
 .personalInfo {
@@ -164,7 +167,43 @@ input {
   flex-direction: column;
   gap: 1rem;
   margin-top: 0.8rem;
-  width: 20vw;
 }
 
+@media screen and (min-width: 768px) {
 
+  .App {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .CV {
+    width: 29.7cm;
+    height: 21cm;
+    transform: scale(0.9);
+    margin-top: 5rem;
+
+  }
+
+  .container {
+    width: 45vw;
+  }
+  
+}
+
+@media screen and (min-width: 1024px) {
+
+  .container {
+    width: 390px;
+  }
+  
+}
+
+@media screen and (min-width: 1920px) {
+
+  .CV {
+    transform: none;
+  }
+  
+}

@@ -83,11 +83,6 @@ function App() {
     ));
   }
 
-  const getLastElement = (array) => {
-    return console.log(array[array.length - 1])
-  }
-
-
 function generatePDF() {
   const cvElement = document.getElementById("cv");
 
@@ -99,7 +94,6 @@ function generatePDF() {
     const pdfHeight = pdf.internal.pageSize.getHeight();
     const imgWidth = canvas.width;
     const imgHeight = canvas.height;
-
     const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
 
     pdf.addImage(
@@ -131,7 +125,7 @@ function clear() {
     </div>
         <Header person={ person } onChange={onChange} onEdit={onEdit} />
         <CreateForm object={school} title="Education" onChange={onSchoolChange} onDelete={removeSchool} onClick={addSchool} onEdit={handleEditSchool} onNoEdit={handleOnCloseSchool}/>
-        <CreateForm object={company} title="Experience" onChange={onCompanyChange} onDelete={removeCompany} onClick={addCompany} onEdit={handleEditCompany}/>
+        <CreateForm object={company} title="Experience" onChange={onCompanyChange} onDelete={removeCompany} onClick={addCompany} onEdit={handleEditCompany} onNoEdit={handleOnCloseCompany}/>
     </div>
     <div id="cv" className="CV">
     <CV person={person} school={school} company={company} />
