@@ -105,7 +105,7 @@ function generatePDF() {
       imgHeight * ratio
     );
 
-    pdf.save(`${person.firstName}_${person.lastName}_cv.pdf`);
+    pdf.save(`${person.FirstName}_${person.LastName}_cv.pdf`);
   });
 }
 
